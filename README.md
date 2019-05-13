@@ -26,4 +26,4 @@ Repl example, returns the function 2\*x\*(previous function) and derivative at 3
 
 ## License
 
-GPL 3
+Eclipse Public License - v 2.0
