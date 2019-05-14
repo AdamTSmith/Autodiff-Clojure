@@ -7,21 +7,27 @@ where f' is the derivative of f.
 
 Extending maths functions to these numbers implements (forward style) autodiff. Autodiff costs only a constant factor in computation compared to evaluating the function, and is often much more convenient and efficient than using symbolic differentiation.
 
-(Just an excuse to check out Clojure really. This is a Leiningen project created using the official Clojure Docker image, but you could just copy lines in *src/astest/core.clj* into the Clojure REPL.)
+(Just an excuse to check out Clojure really, using a Leiningen project created with the official Clojure Docker image. Or just use the code in *src/astest/core.clj* directly in a Clojure REPL.)
 
 
-## Usage
+## Usage - REPL examples
 
-Repl example, returns the function x^2 + 2\*x and derivative at 3.5
+Returns the function x^2 + 2\*x and derivative at 3.5
 
     => (dmrfunc 3.5)
     #astest.core.Dual{:r 19.25, :d 9.0}
 
 
-Repl example, returns the function 2\*x\*(previous function) and derivative at 3.5
+Returns the function 2\*x\*(first function) and derivative at 3.5
 
     => (dmrsfunc 3.5)
     #astest.core.Dual{:r 134.75, :d 101.5}
+
+
+Returns the function 2\*x\*(first function) + sin(x) + cosh(x) and its derivative at 3.5
+
+    => (dallfunc 3.5)
+    #astest.core.Dual{:r 150.9720414433677, :d 103.21550349951194}
 
 
 ## License
